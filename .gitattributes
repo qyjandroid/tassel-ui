@@ -1,3 +1,5 @@
-*.tsx linguist-language=Preact
-*.ts linguist-language=TypeScript
 *.js linguist-language=Preact
+*.css linguist-language=Preact
+*.html linguist-language=Preact
+*.ts linguist-language=Preact
+*.tsx linguist-language=Preact

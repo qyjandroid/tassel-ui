@@ -1,0 +1,10 @@
+/node_modules
+/.cache/*
+/lib/
+/esm/
+/dist
+/.vscode
+/storybook-static
+npm-debug.log*
+# testing
+/coverage

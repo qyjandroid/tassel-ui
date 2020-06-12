@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "outDir": "lib",
+        "baseUrl": "./",
+        "module": "es6",
+        "sourceMap": true,
+        "target": "es2015",
+        "jsx": "react",
+        "jsxFactory": "h",
+        "listFiles": true,
+        "diagnostics": true,
+        "allowJs": true,
+        "declaration": true, //生成相应的d.ts文件
+        "charset": "utf8",
+        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "skipLibCheck": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "esModuleInterop": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "isolatedModules": true,
+        "allowSyntheticDefaultImports": true,
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "types": ["jest", "preact", "node"],
+        "lib": ["dom", "ES6", "ES5", "ES7"]
+    },
+    "include": ["src/**/*", "custom.d.ts", "global.d.ts"],
+    "exclude": ["**/*.stories.js"]
+}

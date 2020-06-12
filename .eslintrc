@@ -1,0 +1,32 @@
+{
+    "env": {
+        "jest": true,
+        "browser": true,
+        "es6": true,
+        "commonjs": true,
+        "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 2016,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            // 添加ES特性支持，使之能够识别ES6语法
+            "jsx": true
+        }
+    },
+    "rules": {
+        //your-rules in here
+        "no-console": "off",
+        // 关闭定义了，但没调用(** is defind but never used)
+        "no-unused-vars": "off"
+    }
+}

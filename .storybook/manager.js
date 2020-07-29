@@ -1,7 +1,12 @@
 import { addons } from '@storybook/addons';
-import { themes } from '@storybook/theming/create';
+import themes from './theme';
 
 addons.setConfig({
     showRoots: true,
-    theme: themes.dark,
+    theme: themes,
+    isFullscreen: false,
+    showNav: true,
+    showPanel: true,
+    panelPosition: "bottom",
+    sidebarAnimations: true,
 });

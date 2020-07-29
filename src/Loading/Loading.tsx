@@ -1,42 +1,46 @@
 /*
  * @Author: quanyj
- * @Date: 2020-04-16 17:00:28
+ * @Date: 2020-06-15 18:14:08
  * @Last Modified by: quanyj
- * @Last Modified time: 2020-06-12 11:44:03
+ * @Last Modified time: 2020-07-29 09:29:11
  */
+
 /** @jsx h */
 
 import { h, Component } from 'preact';
 import './style/index.scss';
-import { LoadingProps, LoadingStateType } from './types';
+import { Props, LoadingStateType } from './types';
+import { classNames } from '../utils/Utils';
 
 /**
- * 加载中控件
+ *
+ * 加载组件
+ * @class Loading
+ * @extends {Component<Props>}
  */
-export default class Loading extends Component<LoadingProps> {
-    constructor(props: LoadingProps) {
+class Loading extends Component<Props> {
+    constructor(props: Props) {
         super(props);
-        this.setState({ state: LoadingStateType.LOADING });
     }
+    renderContent = () => {
+        const { state, children, description, className } = this.props;
+        if (state === LoadingStateType.LOADING) {
+            return <div className="tassel-loading-bg tassel-ani-rotate"></div>;
+        }
+        return <div className="tassel-loading-fail" />;
+    };
     render() {
-        const { state, children, txt, className } = this.props;
-        if (state === LoadingStateType.SUCCESS && children) {
+        const { state, children, description, className } = this.props;
+        if (state === LoadingStateType.SUCCESS) {
             return children;
         }
-        const create = () => {
-            if (state === LoadingStateType.LOADING) {
-                return <div className="h5-loading-bg ani-rotate"></div>;
-            }
-            return <div className="h5-loading-bg ani-rotate"></div>;
-            //return <div className="h5-loading-fail" />;
-        };
+
         return (
-            <div className={`h5-load flex-row flex-a-center flex-c-center ${className}`}>
-                <div className="h5-load-content">
-                    {create()}
-                    <div className="txt">{txt !== undefined ? txt : '努力加载中...'}</div>
-                </div>
+            <div className={classNames('tassel-loading', className)}>
+                {this.renderContent()}
+                <div className="tassel-description">{description !== undefined ? description : 'loading...'}</div>
             </div>
         );
     }
 }
+export default Loading;

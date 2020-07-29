@@ -1,0 +1,19 @@
+/** @jsx h */
+
+import { h, Component } from 'preact';
+import './style/index.scss';
+import { Props } from './types';
+
+class {{pascalCase name}} extends Component<Props> {
+    constructor(props: Props) {
+    super(props);
+    }
+    render() {
+    return (
+    <div className={'tassel-{{kebabCase name}}'}>
+        {{pascalCase name}}
+    </div>
+    );
+    }
+    }
+    export default {{pascalCase name}};

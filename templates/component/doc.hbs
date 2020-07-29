@@ -1,0 +1,13 @@
+/** @jsx h */
+
+import { h } from 'preact';
+import Centered from '@storybook/addon-centered/preact';
+import {{pascalCase name}} from './index';
+
+export default { title: '{{pascalCase name}}',component: {{pascalCase name}}, parameters: { notes: '{{CN}}'
+},decorators:[Centered]}
+
+
+export const withText = () => (
+<{{pascalCase name}}>{'{{kebabCase name}}'}</ {{pascalCase name}}>
+    );
